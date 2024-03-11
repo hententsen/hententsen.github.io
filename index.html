@@ -1,185 +1,232 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
   
+  <meta name="generator" content="Hexo 7.1.1">
+
   
+
+  
+
+  
+    <meta name="author" content="xiaoyuan">
+  
+
+  
+
+  
+
   <title>hententsen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hententsen">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="hententsen">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="xiaoyuan">
-<meta name="twitter:card" content="summary">
+
   
-    <link rel="alternate" href="/atom.xml" title="hententsen" type="application/atom+xml">
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <!--mathjax latex数学公式显示支持-->
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+
   
+
   
+
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 7.1.1"></head>
-
+</head>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">hententsen</a>
-      </h1>
-      
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container">
+  
+    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          hententsen
+        
+      </a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/11/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-03-11T03:31:31.741Z" itemprop="datePublished">2024-03-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <ul class="navbar-list">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/11/hello-world/">webpack添加混淆加密</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1、下载对应版本的两个插件，如-webpack4-下载-webpack-obfuscator-2-x-x-版本，webpack5-下载最新的即可（javascript-obfuscator-可直接下载最新版本）"><a href="#1、下载对应版本的两个插件，如-webpack4-下载-webpack-obfuscator-2-x-x-版本，webpack5-下载最新的即可（javascript-obfuscator-可直接下载最新版本）" class="headerlink" title="1、下载对应版本的两个插件，如 webpack4 下载 webpack-obfuscator @2.x.x 版本，webpack5 下载最新的即可（javascript-obfuscator 可直接下载最新版本）"></a>1、下载对应版本的两个插件，如 webpack4 下载 webpack-obfuscator @2.x.x 版本，webpack5 下载最新的即可（javascript-obfuscator 可直接下载最新版本）</h2><h2 id="2、在-vue-config-js-中引入"><a href="#2、在-vue-config-js-中引入" class="headerlink" title="2、在 vue.config.js 中引入"></a>2、在 vue.config.js 中引入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ const WebpackObfuscator = require(<span class="string">&#x27;webpack-obfuscator&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、在-configureWebpack-的-plugins-中添加（混淆复杂度越高，响应时间越慢）"><a href="#3、在-configureWebpack-的-plugins-中添加（混淆复杂度越高，响应时间越慢）" class="headerlink" title="3、在 configureWebpack 的 plugins 中添加（混淆复杂度越高，响应时间越慢）"></a>3、在 configureWebpack 的 plugins 中添加（混淆复杂度越高，响应时间越慢）</h2><p>new WebpackObfuscator 的第二个参数是排除需要混淆的文件，可以使用匹配</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">// 低混淆</span><br><span class="line"></span><br><span class="line">new WebpackObfuscator(&#123;</span><br><span class="line"></span><br><span class="line">    compact: <span class="literal">true</span>, // 压缩代码</span><br><span class="line"></span><br><span class="line">    controlFlowFlattening: <span class="literal">false</span>, // 是否启用控制流扁平化(降低1.5倍的运行速度)</span><br><span class="line"></span><br><span class="line">    deadCodeInjection: <span class="literal">false</span>, // 随机的死代码块(增加了混淆代码的大小)</span><br><span class="line"></span><br><span class="line">    debugProtection: <span class="literal">false</span>, // 此选项几乎不可能使用开发者工具的控制台选项卡</span><br><span class="line"></span><br><span class="line">    debugProtectionInterval: <span class="literal">false</span>, // 如果选中，则会在“控制台”选项卡上使用间隔强制调试模式，从而更难使用“开发人员工具”的其他功能。</span><br><span class="line"></span><br><span class="line">    disableConsoleOutput: <span class="literal">false</span>, // 通过用空函数替换它们来禁用console.log，console.info，console.error和console.warn。这使得调试器的使用更加困难。</span><br><span class="line"></span><br><span class="line">    identifierNamesGenerator: <span class="string">&#x27;hexadecimal&#x27;</span>, // 标识符的混淆方式 hexadecimal(十六进制) mangled(短标识符)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">log</span>: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">    renameGlobals: <span class="literal">false</span>, // 是否启用全局变量和函数名称的混淆</span><br><span class="line">    </span><br><span class="line">    rotateStringArray: <span class="literal">true</span>, // 通过固定和随机（在代码混淆时生成）的位置移动数组。这使得将删除的字符串的顺序与其原始位置相匹配变得更加困难。如果原始源代码不小，建议使用此选项，因为辅助函数可以引起注意。</span><br><span class="line"></span><br><span class="line">    selfDefending: <span class="literal">true</span>, // 混淆后的代码,不能使用代码美化,同时需要配置 cpmpat:<span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    stringArray: <span class="literal">true</span>, // 删除字符串文字并将它们放在一个特殊的数组中</span><br><span class="line"></span><br><span class="line">    // stringArrayEncoding: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">    stringArrayEncoding: [<span class="string">&#x27;base64&#x27;</span>],</span><br><span class="line"></span><br><span class="line">    stringArrayThreshold: 0.75,</span><br><span class="line">    </span><br><span class="line">    unicodeEscapeSequence: <span class="literal">false</span> // 允许启用/禁用字符串转换为unicode转义序列。Unicode转义序列大大增加了代码大小，并且可以轻松地将字符串恢复为原始视图。建议仅对小型源代码启用此选项。</span><br><span class="line"></span><br><span class="line">  &#125;, [<span class="string">&#x27;js/!(app.**.js)&#x27;</span>]) // 精简代码， 源码主要体现在打包后的app.**.**.js 里，所以除了他以外的无需混淆</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/11/hello-world/" data-id="cltmeinmq0000hwv45qurb1im" data-title="webpack添加混淆加密" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
+          <li class="navbar-list-item"><a href="/">首页</a></li>
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
         
-          <li>
-            <a href="/2024/03/11/hello-world/">webpack添加混淆加密</a>
-          </li>
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
         
       </ul>
     </div>
   </div>
+</nav>
 
   
-</aside>
+  
+    <div class="header-content">
+      <div class="post-text layout-block layout-padding">
+        <h1 class="title-wrap">hententsen</h1>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 xiaoyuan<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
+  
 
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+</header>
+
+    <!-- 首页 -->
+
+<!-- post list container -->
+<div class="body-container">
+  <div class="content-container layout-block article-list">
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/03/11/hello-world/" itemprop="url">
+                <h2 class="card-text--title">webpack添加混淆加密</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-03-11T03:31:31.741Z" itemprop="datePublished">2024-03-11</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+  </div>
+</div>
+
+<!-- page container -->
+
+
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/miiiku/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+        
+          <a href="https://twitter.com/guanquanhong" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
+</svg>
+          </a>
+        
+      
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+     
+    <p>&copy; 2024 <a href="/" target="_blank">xiaoyuan</a></p>
+
     
 
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  
 
 
 
@@ -187,9 +234,7 @@
 <script src="/js/script.js"></script>
 
 
-
-
-
-  </div>
+  
+  <!-- 尾部用户自定义相关内容 -->
 </body>
 </html>
