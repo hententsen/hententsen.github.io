@@ -22,7 +22,7 @@
 
   
 
-  <title>a元素四种伪类状态使用顺序 | hententsen</title>
+  <title>在vite中添加自动导入插件 | hententsen</title>
 
   
 
@@ -99,11 +99,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">a元素四种伪类状态使用顺序</h1>
+          <h1 class="title-wrap">在vite中添加自动导入插件</h1>
           <h2 class="title-sub-wrap">
             <strong>xiaoyuan</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-03-12T03:47:36.326Z" itemprop="datePublished">2024-03-12</time>
+            <time  class="article-date" datetime="2024-03-14T03:34:32.275Z" itemprop="datePublished">2024-03-14</time>
           </h2>
           
           
@@ -134,43 +134,37 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="A标签有四种状态："><a href="#A标签有四种状态：" class="headerlink" title="A标签有四种状态："></a>A标签有四种状态：</h2><ul>
-<li>链接访问前、链接访问后、鼠标滑过、激活，分别对应四种伪类</li>
-<li>:link、:visited、:hover、:active</li>
+        <ul>
+<li>在vue3中，出现了setup语法糖让我们不再需要将变两个方法都return出去就可以在模版中使用，但是setup语法糖中并没有自动导入的功能，所以我们需要一个自动导入的插件来帮助我们解决这个问题。</li>
 </ul>
-<h2 id="当链接未访问过时："><a href="#当链接未访问过时：" class="headerlink" title="当链接未访问过时："></a>当链接未访问过时：</h2><ul>
-<li>（1）当鼠标滑过a链接时，满足:link和:hover两种状态，要改变a标签的颜色，就必须将:hover伪类在:link伪类后面声明；</li>
-<li>（2）当鼠标点击激活a链接时，同时满足:link、:hover、:active三种状态，要显示a标签激活时的样式（:active），必须将:active声明放到:link和:hover之后。因此得出LVHA这个顺序。</li>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install unplugin-auto-import -D</span><br><span class="line">npm install unplugin-vue-components -D</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>在vite.config.js中进行配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">import &#123; defineConfig &#125; from <span class="string">&#x27;vite&#x27;</span>;</span><br><span class="line">// 自动引入</span><br><span class="line">import AutoImport from <span class="string">&#x27;unplugin-auto-import/vite&#x27;</span></span><br><span class="line">import Components from <span class="string">&#x27;unplugin-vue-components/vite&#x27;</span></span><br><span class="line">import &#123; ElementPlusResolver &#125; from <span class="string">&#x27;unplugin-vue-components/resolvers&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default defineConfig((&#123; command &#125;: ConfigEnv): UserConfig =&gt; &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    plugins: [</span><br><span class="line">      AutoImport(&#123;</span><br><span class="line">          // 解析器</span><br><span class="line">          resolvers: [ElementPlusResolver()],</span><br><span class="line">          // 自动导入Api</span><br><span class="line">          imports: [</span><br><span class="line">            &#x27;vue&#x27;,</span><br><span class="line">            &#x27;vue-router&#x27;,</span><br><span class="line">            &#x27;pinia&#x27;,</span><br><span class="line">            &#123; lodash: [[&#x27;*&#x27;, &#x27;_&#x27;]] &#125;,</span><br><span class="line">            &#123; &#x27;element-plus&#x27;: [&#x27;ElMessage&#x27;, &#x27;ElMessageBox&#x27;, &#x27;ElNotification&#x27;] &#125;</span><br><span class="line">          ],</span><br><span class="line">          // 为true时在项目根目录自动创建</span><br><span class="line">          dts: &#x27;types/auto-imports.d.ts&#x27;,</span><br><span class="line">          // 启用 eslint, 解决eslint报错</span><br><span class="line">          eslintrc: &#123; enabled: true, globalsPropValue: &#x27;readonly&#x27; &#125;</span><br><span class="line">        &#125;),</span><br><span class="line">        Components(&#123;</span><br><span class="line">          // 解析器</span><br><span class="line">          resolvers: [ElementPlusResolver()],</span><br><span class="line">          // 自动加载的组件目录，默认值为 [&#x27;src/components&#x27;]</span><br><span class="line">          dirs: [&#x27;src/components&#x27;],</span><br><span class="line">          // 组件名称包含目录，防止同名组件冲突</span><br><span class="line">          directoryAsNamespace: true,</span><br><span class="line">          // 指定类型声明文件，为true时在项目根目录创建</span><br><span class="line">          dts: &#x27;types/components.d.ts&#x27;,</span><br><span class="line">          // 导入路径变换</span><br><span class="line">          importPathTransform: (path) =&gt; path.replace(/^.+\/src/g, &#x27;@&#x27;)</span><br><span class="line">        &#125;),</span><br><span class="line">    ],</span><br><span class="line">    resolve: &#123;</span><br><span class="line">      alias: &#123;</span><br><span class="line">        &#x27;@&#x27;: path.resolve(&#x27;./src&#x27;) // 相对路径别名配置，使用 @ 代替 src</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>配置完成后会自动生成auto-imports.d.ts文件。</li>
 </ul>
-<h2 id="当链接访问过时，情况基本同上，只不过需要将-link换成-visited。"><a href="#当链接访问过时，情况基本同上，只不过需要将-link换成-visited。" class="headerlink" title="当链接访问过时，情况基本同上，只不过需要将:link换成:visited。"></a>当链接访问过时，情况基本同上，只不过需要将:link换成:visited。</h2>
+<h2 id="解决eslint报错问题"><a href="#解决eslint报错问题" class="headerlink" title="解决eslint报错问题"></a>解决eslint报错问题</h2><ul>
+<li>在上方代码中的eslintrc: { enabled: true, globalsPropValue: ‘readonly’ }配置完成后会自动生成.eslintrc-auto-import.json文件，将其导入eslintrc.js即可<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// eslintrc.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  extends: [</span><br><span class="line">    <span class="string">&#x27;./.eslintrc-auto-import.json&#x27;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="解决ts报错问题"><a href="#解决ts报错问题" class="headerlink" title="解决ts报错问题"></a>解决ts报错问题</h2><ul>
+<li>如果在ts中使用了自动导入，需要在tsconfig.json中配置<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// tsconfig.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;compilerOptions&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;paths&quot;</span>: &#123;</span><br><span class="line">      //路径映射，相对于baseUrl</span><br><span class="line">      <span class="string">&quot;@/*&quot;</span>: [<span class="string">&quot;src/*&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    // 给element-plus添加高亮提示</span><br><span class="line">    <span class="string">&quot;types&quot;</span>: [<span class="string">&quot;element-plus/global&quot;</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;include&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;src/**/*.ts&quot;</span>,</span><br><span class="line">    <span class="string">&quot;src/**/*.d.ts&quot;</span>,</span><br><span class="line">    <span class="string">&quot;src/**/*.tsx&quot;</span>,</span><br><span class="line">    <span class="string">&quot;src/**/*.vue&quot;</span>,</span><br><span class="line">    <span class="string">&quot;src/**/*.d.ts&quot;</span>, // 自动导入配置</span><br><span class="line">    <span class="string">&quot;types/**/*.d.ts&quot;</span>, // 自动导入配置</span><br><span class="line">    <span class="string">&quot;build/**/*.d.ts&quot;</span>, // 自动导入配置</span><br><span class="line">    <span class="string">&quot;./auto-imports.d.ts&quot;</span> // 自动导入配置</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+
       </section>
 
       
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2024/03/12/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">伪类和伪元素选择器的区别</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2024/03/11/webpack%E6%B7%BB%E5%8A%A0%E6%B7%B7%E6%B7%86%E5%8A%A0%E5%AF%86/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">webpack添加混淆加密</h2>
+        <a href="/2024/03/12/vue2%E5%BC%95%E5%85%A5%E7%BB%84%E4%BB%B6%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">vue2引入组件碰到的样式错乱打不开的问题</h2>
         </a>
       
       <div class="card-text--row">Older</div>
