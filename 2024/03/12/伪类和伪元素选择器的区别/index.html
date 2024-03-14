@@ -22,7 +22,7 @@
 
   
 
-  <title>a元素四种伪类状态使用顺序 | hententsen</title>
+  <title>伪类和伪元素选择器的区别 | hententsen</title>
 
   
 
@@ -99,11 +99,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">a元素四种伪类状态使用顺序</h1>
+          <h1 class="title-wrap">伪类和伪元素选择器的区别</h1>
           <h2 class="title-sub-wrap">
             <strong>xiaoyuan</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-03-12T03:47:36.326Z" itemprop="datePublished">2024-03-12</time>
+            <time  class="article-date" datetime="2024-03-12T05:10:34.948Z" itemprop="datePublished">2024-03-12</time>
           </h2>
           
           
@@ -134,15 +134,13 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="A标签有四种状态："><a href="#A标签有四种状态：" class="headerlink" title="A标签有四种状态："></a>A标签有四种状态：</h2><ul>
-<li>链接访问前、链接访问后、鼠标滑过、激活，分别对应四种伪类</li>
-<li>:link、:visited、:hover、:active</li>
+        <h2 id="伪类，更多的定义的是状态。"><a href="#伪类，更多的定义的是状态。" class="headerlink" title="伪类，更多的定义的是状态。"></a>伪类，更多的定义的是状态。</h2><ul>
+<li>常见的伪类有 :hover，:active，:focus，:visited，:link，:not，:first-child，:last-child等等。</li>
 </ul>
-<h2 id="当链接未访问过时："><a href="#当链接未访问过时：" class="headerlink" title="当链接未访问过时："></a>当链接未访问过时：</h2><ul>
-<li>（1）当鼠标滑过a链接时，满足:link和:hover两种状态，要改变a标签的颜色，就必须将:hover伪类在:link伪类后面声明；</li>
-<li>（2）当鼠标点击激活a链接时，同时满足:link、:hover、:active三种状态，要显示a标签激活时的样式（:active），必须将:active声明放到:link和:hover之后。因此得出LVHA这个顺序。</li>
+<h2 id="伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。"><a href="#伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。" class="headerlink" title="伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。"></a>伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。</h2><ul>
+<li>常见伪元素有 ::before，::after，::first-letter，::first-line等等。</li>
 </ul>
-<h2 id="当链接访问过时，情况基本同上，只不过需要将-link换成-visited。"><a href="#当链接访问过时，情况基本同上，只不过需要将-link换成-visited。" class="headerlink" title="当链接访问过时，情况基本同上，只不过需要将:link换成:visited。"></a>当链接访问过时，情况基本同上，只不过需要将:link换成:visited。</h2>
+
       </section>
 
       
@@ -154,8 +152,8 @@
     
     <div class="card-text">
       
-        <a href="/2024/03/12/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">伪类和伪元素选择器的区别</h2>
+        <a href="/2024/03/12/%E5%B1%85%E4%B8%AD%E5%AF%B9%E9%BD%90%E7%9A%84%E6%96%B9%E5%BC%8F/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">居中对齐的方式</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -169,8 +167,8 @@
     
     <div class="card-text">
       
-        <a href="/2024/03/11/webpack%E6%B7%BB%E5%8A%A0%E6%B7%B7%E6%B7%86%E5%8A%A0%E5%AF%86/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">webpack添加混淆加密</h2>
+        <a href="/2024/03/12/a%E5%85%83%E7%B4%A0%E5%9B%9B%E7%A7%8D%E4%BC%AA%E7%B1%BB%E7%8A%B6%E6%80%81%E4%BD%BF%E7%94%A8%E9%A1%BA%E5%BA%8F/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">a元素四种伪类状态使用顺序</h2>
         </a>
       
       <div class="card-text--row">Older</div>

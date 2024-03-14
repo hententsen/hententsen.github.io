@@ -22,7 +22,7 @@
 
   
 
-  <title>a元素四种伪类状态使用顺序 | hententsen</title>
+  <title>居中对齐的方式 | hententsen</title>
 
   
 
@@ -99,11 +99,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">a元素四种伪类状态使用顺序</h1>
+          <h1 class="title-wrap">居中对齐的方式</h1>
           <h2 class="title-sub-wrap">
             <strong>xiaoyuan</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-03-12T03:47:36.326Z" itemprop="datePublished">2024-03-12</time>
+            <time  class="article-date" datetime="2024-03-12T05:13:38.028Z" itemprop="datePublished">2024-03-12</time>
           </h2>
           
           
@@ -134,15 +134,16 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="A标签有四种状态："><a href="#A标签有四种状态：" class="headerlink" title="A标签有四种状态："></a>A标签有四种状态：</h2><ul>
-<li>链接访问前、链接访问后、鼠标滑过、激活，分别对应四种伪类</li>
-<li>:link、:visited、:hover、:active</li>
+        <ul>
+<li>（1）我们可以利用margin:0 auto来实现元素的水平居中。</li>
+<li>（2）利用绝对定位，设置四个方向的值都为0，并将margin设置为auto，由于宽高固定，因此对应方向实现平分，可以实现水平和垂直方向上的居中。</li>
+<li>（3）利用绝对定位，先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过margin负值来调整元素的中心点到页面的中心。</li>
+<li>（4）利用绝对定位，先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过translate来调整元素的中心点到页面的中心。</li>
+<li>（5）使用flex布局，通过align-items:center和justify-content:center设置容器的垂直和水平方向上为居中对齐，然后它的子元素也可以实现垂直和水平的居中。</li>
+<li>（6）grid 布局 justify-content: center; align-content: center;</li>
+<li>。。。对于宽高固定的元素，上面的方法均适用。对于宽高不定的元素，上面的后面两种方法，可以实现元素的垂直和水平的居中。</li>
 </ul>
-<h2 id="当链接未访问过时："><a href="#当链接未访问过时：" class="headerlink" title="当链接未访问过时："></a>当链接未访问过时：</h2><ul>
-<li>（1）当鼠标滑过a链接时，满足:link和:hover两种状态，要改变a标签的颜色，就必须将:hover伪类在:link伪类后面声明；</li>
-<li>（2）当鼠标点击激活a链接时，同时满足:link、:hover、:active三种状态，要显示a标签激活时的样式（:active），必须将:active声明放到:link和:hover之后。因此得出LVHA这个顺序。</li>
-</ul>
-<h2 id="当链接访问过时，情况基本同上，只不过需要将-link换成-visited。"><a href="#当链接访问过时，情况基本同上，只不过需要将-link换成-visited。" class="headerlink" title="当链接访问过时，情况基本同上，只不过需要将:link换成:visited。"></a>当链接访问过时，情况基本同上，只不过需要将:link换成:visited。</h2>
+
       </section>
 
       
@@ -154,8 +155,8 @@
     
     <div class="card-text">
       
-        <a href="/2024/03/12/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">伪类和伪元素选择器的区别</h2>
+        <a href="/2024/03/12/vue2%E5%BC%95%E5%85%A5%E7%BB%84%E4%BB%B6%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">vue2引入组件碰到的样式错乱打不开的问题</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -169,8 +170,8 @@
     
     <div class="card-text">
       
-        <a href="/2024/03/11/webpack%E6%B7%BB%E5%8A%A0%E6%B7%B7%E6%B7%86%E5%8A%A0%E5%AF%86/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">webpack添加混淆加密</h2>
+        <a href="/2024/03/12/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">伪类和伪元素选择器的区别</h2>
         </a>
       
       <div class="card-text--row">Older</div>
