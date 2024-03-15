@@ -143,21 +143,25 @@
 <li>（6）grid 布局 justify-content: center; align-content: center;</li>
 <li>。。。对于宽高固定的元素，上面的方法均适用。对于宽高不定的元素，上面的后面两种方法，可以实现元素的垂直和水平的居中。</li>
 </ul>
-<h1 id="2-伪类和伪元素选择器的区别"><a href="#2-伪类和伪元素选择器的区别" class="headerlink" title="2.伪类和伪元素选择器的区别"></a>2.伪类和伪元素选择器的区别</h1><h2 id="伪类，更多的定义的是状态。"><a href="#伪类，更多的定义的是状态。" class="headerlink" title="伪类，更多的定义的是状态。"></a>伪类，更多的定义的是状态。</h2><ul>
+<h1 id="2-伪类和伪元素选择器的区别"><a href="#2-伪类和伪元素选择器的区别" class="headerlink" title="2.伪类和伪元素选择器的区别"></a>2.伪类和伪元素选择器的区别</h1><h4 id="伪类，更多的定义的是状态。"><a href="#伪类，更多的定义的是状态。" class="headerlink" title="伪类，更多的定义的是状态。"></a>伪类，更多的定义的是状态。</h4><ul>
 <li>常见的伪类有 :hover，:active，:focus，:visited，:link，:not，:first-child，:last-child等等。</li>
 </ul>
-<h2 id="伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。"><a href="#伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。" class="headerlink" title="伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。"></a>伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。</h2><ul>
+<h4 id="伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。"><a href="#伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。" class="headerlink" title="伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。"></a>伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。</h4><ul>
 <li>常见伪元素有 ::before，::after，::first-letter，::first-line等等。</li>
 </ul>
-<h1 id="3-a元素四种伪类状态使用顺序"><a href="#3-a元素四种伪类状态使用顺序" class="headerlink" title="3.a元素四种伪类状态使用顺序"></a>3.a元素四种伪类状态使用顺序</h1><h2 id="A标签有四种状态："><a href="#A标签有四种状态：" class="headerlink" title="A标签有四种状态："></a>A标签有四种状态：</h2><ul>
+<h1 id="3-a元素四种伪类状态使用顺序"><a href="#3-a元素四种伪类状态使用顺序" class="headerlink" title="3.a元素四种伪类状态使用顺序"></a>3.a元素四种伪类状态使用顺序</h1><h4 id="A标签有四种状态："><a href="#A标签有四种状态：" class="headerlink" title="A标签有四种状态："></a>A标签有四种状态：</h4><ul>
 <li>链接访问前、链接访问后、鼠标滑过、激活，分别对应四种伪类</li>
 <li>:link、:visited、:hover、:active</li>
 </ul>
-<h2 id="当链接未访问过时："><a href="#当链接未访问过时：" class="headerlink" title="当链接未访问过时："></a>当链接未访问过时：</h2><ul>
-<li>（1）当鼠标滑过a链接时，满足:link和:hover两种状态，要改变a标签的颜色，就必须将:hover伪类在:link伪类后面声明；</li>
-<li>（2）当鼠标点击激活a链接时，同时满足:link、:hover、:active三种状态，要显示a标签激活时的样式（:active），必须将:active声明放到:link和:hover之后。因此得出LVHA这个顺序。</li>
+<h4 id="当链接未访问过时："><a href="#当链接未访问过时：" class="headerlink" title="当链接未访问过时："></a>当链接未访问过时：</h4><ul>
+<li><p>（1）当鼠标滑过a链接时，满足:link和:hover两种状态，要改变a标签的颜色，就必须将:hover伪类在:link伪类后面声明；</p>
+</li>
+<li><p>（2）当鼠标点击激活a链接时，同时满足:link、:hover、:active三种状态，要显示a标签激活时的样式（:active），必须将:active声明放到:link和:hover之后。因此得出LVHA这个顺序。</p>
+</li>
+<li><p>当链接访问过时，情况基本同上，只不过需要将:link换成:visited。</p>
+</li>
 </ul>
-<h2 id="当链接访问过时，情况基本同上，只不过需要将-link换成-visited。"><a href="#当链接访问过时，情况基本同上，只不过需要将-link换成-visited。" class="headerlink" title="当链接访问过时，情况基本同上，只不过需要将:link换成:visited。"></a>当链接访问过时，情况基本同上，只不过需要将:link换成:visited。</h2><h1 id="4-flex布局"><a href="#4-flex布局" class="headerlink" title="4.flex布局"></a>4.flex布局</h1><h3 id="1-容器属性"><a href="#1-容器属性" class="headerlink" title="1. 容器属性"></a>1. 容器属性</h3><ul>
+<h1 id="4-flex布局"><a href="#4-flex布局" class="headerlink" title="4.flex布局"></a>4.flex布局</h1><h3 id="1-容器属性"><a href="#1-容器属性" class="headerlink" title="1. 容器属性"></a>1. 容器属性</h3><ul>
 <li>flex-direction</li>
 <li>flex-wrap</li>
 <li>flex-flow</li>
