@@ -22,7 +22,7 @@
 
   
 
-  <title>flex布局 | hententsen</title>
+  <title>css | hententsen</title>
 
   
 
@@ -99,11 +99,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">flex布局</h1>
+          <h1 class="title-wrap">css</h1>
           <h2 class="title-sub-wrap">
             <strong>xiaoyuan</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-03-15T07:29:01.863Z" itemprop="datePublished">2024-03-15</time>
+            <time  class="article-date" datetime="2024-03-15T09:33:22.881Z" itemprop="datePublished">2024-03-15</time>
           </h2>
           
           
@@ -134,7 +134,30 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="flex弹性布局"><a href="#flex弹性布局" class="headerlink" title="flex弹性布局"></a>flex弹性布局</h2><h3 id="1-容器属性"><a href="#1-容器属性" class="headerlink" title="1. 容器属性"></a>1. 容器属性</h3><ul>
+        <h1 id="1-居中对齐的方式"><a href="#1-居中对齐的方式" class="headerlink" title="1.居中对齐的方式"></a>1.居中对齐的方式</h1><ul>
+<li>（1）我们可以利用margin:0 auto来实现元素的水平居中。</li>
+<li>（2）利用绝对定位，设置四个方向的值都为0，并将margin设置为auto，由于宽高固定，因此对应方向实现平分，可以实现水平和垂直方向上的居中。</li>
+<li>（3）利用绝对定位，先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过margin负值来调整元素的中心点到页面的中心。</li>
+<li>（4）利用绝对定位，先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过translate来调整元素的中心点到页面的中心。</li>
+<li>（5）使用flex布局，通过align-items:center和justify-content:center设置容器的垂直和水平方向上为居中对齐，然后它的子元素也可以实现垂直和水平的居中。</li>
+<li>（6）grid 布局 justify-content: center; align-content: center;</li>
+<li>。。。对于宽高固定的元素，上面的方法均适用。对于宽高不定的元素，上面的后面两种方法，可以实现元素的垂直和水平的居中。</li>
+</ul>
+<h1 id="2-伪类和伪元素选择器的区别"><a href="#2-伪类和伪元素选择器的区别" class="headerlink" title="2.伪类和伪元素选择器的区别"></a>2.伪类和伪元素选择器的区别</h1><h2 id="伪类，更多的定义的是状态。"><a href="#伪类，更多的定义的是状态。" class="headerlink" title="伪类，更多的定义的是状态。"></a>伪类，更多的定义的是状态。</h2><ul>
+<li>常见的伪类有 :hover，:active，:focus，:visited，:link，:not，:first-child，:last-child等等。</li>
+</ul>
+<h2 id="伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。"><a href="#伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。" class="headerlink" title="伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。"></a>伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。</h2><ul>
+<li>常见伪元素有 ::before，::after，::first-letter，::first-line等等。</li>
+</ul>
+<h1 id="3-a元素四种伪类状态使用顺序"><a href="#3-a元素四种伪类状态使用顺序" class="headerlink" title="3.a元素四种伪类状态使用顺序"></a>3.a元素四种伪类状态使用顺序</h1><h2 id="A标签有四种状态："><a href="#A标签有四种状态：" class="headerlink" title="A标签有四种状态："></a>A标签有四种状态：</h2><ul>
+<li>链接访问前、链接访问后、鼠标滑过、激活，分别对应四种伪类</li>
+<li>:link、:visited、:hover、:active</li>
+</ul>
+<h2 id="当链接未访问过时："><a href="#当链接未访问过时：" class="headerlink" title="当链接未访问过时："></a>当链接未访问过时：</h2><ul>
+<li>（1）当鼠标滑过a链接时，满足:link和:hover两种状态，要改变a标签的颜色，就必须将:hover伪类在:link伪类后面声明；</li>
+<li>（2）当鼠标点击激活a链接时，同时满足:link、:hover、:active三种状态，要显示a标签激活时的样式（:active），必须将:active声明放到:link和:hover之后。因此得出LVHA这个顺序。</li>
+</ul>
+<h2 id="当链接访问过时，情况基本同上，只不过需要将-link换成-visited。"><a href="#当链接访问过时，情况基本同上，只不过需要将-link换成-visited。" class="headerlink" title="当链接访问过时，情况基本同上，只不过需要将:link换成:visited。"></a>当链接访问过时，情况基本同上，只不过需要将:link换成:visited。</h2><h1 id="4-flex布局"><a href="#4-flex布局" class="headerlink" title="4.flex布局"></a>4.flex布局</h1><h3 id="1-容器属性"><a href="#1-容器属性" class="headerlink" title="1. 容器属性"></a>1. 容器属性</h3><ul>
 <li>flex-direction</li>
 <li>flex-wrap</li>
 <li>flex-flow</li>
@@ -184,8 +207,8 @@
     
     <div class="card-text">
       
-        <a href="/2024/03/14/%E5%9C%A8vite%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%8A%A8%E5%AF%BC%E5%85%A5%E6%8F%92%E4%BB%B6/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">在vite中添加自动导入插件</h2>
+        <a href="/2024/03/12/vue2%E5%BC%95%E5%85%A5%E7%BB%84%E4%BB%B6%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">vue2引入组件碰到的样式错乱打不开的问题</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -227,7 +250,7 @@
         <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
 </svg>
-        <span>7</span>
+        <span>3</span>
       </div>
       <div class="count-box--item">
         <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
