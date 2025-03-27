@@ -24,7 +24,7 @@
 
   
 
-  <title>css | Hententsen</title>
+  <title>uniapp项目中碰到的问题 | Hententsen</title>
 
   
 
@@ -101,17 +101,17 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">css</h1>
+          <h1 class="title-wrap">uniapp项目中碰到的问题</h1>
           <h2 class="title-sub-wrap">
             <strong>Hententsen</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-07-08T16:00:00.000Z" itemprop="datePublished">2023-07-09</time>
+            <time  class="article-date" datetime="2024-09-27T16:00:00.000Z" itemprop="datePublished">2024-09-28</time>
           </h2>
           
           
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/css/">📒 css</a></li>
+    <li><a href="/categories/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%A2%B0%E5%88%B0%E9%97%AE%E9%A2%98/">📒 项目中碰到问题</a></li>
   
 </ul>
           <ul class="wrap-list dark">
@@ -138,70 +138,10 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="1-居中对齐的方式"><a href="#1-居中对齐的方式" class="headerlink" title="1.居中对齐的方式"></a>1.居中对齐的方式</h1><ul>
-<li>（1）我们可以利用margin:0 auto来实现元素的水平居中。</li>
-<li>（2）利用绝对定位，设置四个方向的值都为0，并将margin设置为auto，由于宽高固定，因此对应方向实现平分，可以实现水平和垂直方向上的居中。</li>
-<li>（3）利用绝对定位，先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过margin负值来调整元素的中心点到页面的中心。</li>
-<li>（4）利用绝对定位，先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过translate来调整元素的中心点到页面的中心。</li>
-<li>（5）使用flex布局，通过align-items:center和justify-content:center设置容器的垂直和水平方向上为居中对齐，然后它的子元素也可以实现垂直和水平的居中。</li>
-<li>（6）grid 布局 justify-content: center; align-content: center;</li>
-<li>。。。对于宽高固定的元素，上面的方法均适用。对于宽高不定的元素，上面的后面两种方法，可以实现元素的垂直和水平的居中。</li>
+        <h1 id="1-ios和Android的兼容性"><a href="#1-ios和Android的兼容性" class="headerlink" title="1. ios和Android的兼容性"></a>1. ios和Android的兼容性</h1><h3 id="1-1-ios系统的默认超出滚动链的行为"><a href="#1-1-ios系统的默认超出滚动链的行为" class="headerlink" title="1.1 ios系统的默认超出滚动链的行为"></a>1.1 ios系统的默认超出滚动链的行为</h3><ul>
+<li>在开发h5的时候，在ios上会有个问题，就是在页面滚动到最底部或最顶部时，还是可以往上滚动或往下滚动，如果想要关闭这个行为，需要添加以下样式</li>
+<li>解决办法<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 关闭默认超出滚动链</span></span><br><span class="line"><span class="comment">  兼容性：</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="attribute">overscroll-behavior-y</span>: none;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="2-伪类和伪元素选择器的区别"><a href="#2-伪类和伪元素选择器的区别" class="headerlink" title="2.伪类和伪元素选择器的区别"></a>2.伪类和伪元素选择器的区别</h1><h4 id="伪类，更多的定义的是状态。"><a href="#伪类，更多的定义的是状态。" class="headerlink" title="伪类，更多的定义的是状态。"></a>伪类，更多的定义的是状态。</h4><ul>
-<li>常见的伪类有 :hover，:active，:focus，:visited，:link，:not，:first-child，:last-child等等。</li>
-</ul>
-<h4 id="伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。"><a href="#伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。" class="headerlink" title="伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。"></a>伪元素，不存在于DOM树中的虚拟元素，它们可以像正常的html元素一样定义css，但无法使用JavaScript获取。</h4><ul>
-<li>常见伪元素有 ::before，::after，::first-letter，::first-line等等。</li>
-</ul>
-<h1 id="3-a元素四种伪类状态使用顺序"><a href="#3-a元素四种伪类状态使用顺序" class="headerlink" title="3.a元素四种伪类状态使用顺序"></a>3.a元素四种伪类状态使用顺序</h1><h4 id="A标签有四种状态："><a href="#A标签有四种状态：" class="headerlink" title="A标签有四种状态："></a>A标签有四种状态：</h4><ul>
-<li>链接访问前、链接访问后、鼠标滑过、激活，分别对应四种伪类</li>
-<li>:link、:visited、:hover、:active</li>
-</ul>
-<h4 id="当链接未访问过时："><a href="#当链接未访问过时：" class="headerlink" title="当链接未访问过时："></a>当链接未访问过时：</h4><ul>
-<li><p>（1）当鼠标滑过a链接时，满足:link和:hover两种状态，要改变a标签的颜色，就必须将:hover伪类在:link伪类后面声明；</p>
-</li>
-<li><p>（2）当鼠标点击激活a链接时，同时满足:link、:hover、:active三种状态，要显示a标签激活时的样式（:active），必须将:active声明放到:link和:hover之后。因此得出LVHA这个顺序。</p>
-</li>
-<li><p>当链接访问过时，情况基本同上，只不过需要将:link换成:visited。</p>
-</li>
-</ul>
-<h1 id="4-flex布局"><a href="#4-flex布局" class="headerlink" title="4.flex布局"></a>4.flex布局</h1><h3 id="1-容器属性"><a href="#1-容器属性" class="headerlink" title="1. 容器属性"></a>1. 容器属性</h3><ul>
-<li>flex-direction</li>
-<li>flex-wrap</li>
-<li>flex-flow</li>
-<li>justify-content</li>
-<li>align-items</li>
-<li>align-content</li>
-</ul>
-<h3 id="2-项目属性"><a href="#2-项目属性" class="headerlink" title="2. 项目属性"></a>2. 项目属性</h3><ul>
-<li>order</li>
-<li>flex-grow</li>
-<li>flex-shrink</li>
-<li>flex-basis</li>
-<li>flex</li>
-<li>align-self</li>
-</ul>
-<h3 id="3-容器属性详解"><a href="#3-容器属性详解" class="headerlink" title="3. 容器属性详解"></a>3. 容器属性详解</h3><h4 id="3-1-flex-direction"><a href="#3-1-flex-direction" class="headerlink" title="3.1 flex-direction"></a>3.1 flex-direction</h4><p>决定主轴方向，即项目的排列方向。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-2-flex-wrap"><a href="#3-2-flex-wrap" class="headerlink" title="3.2 flex-wrap"></a>3.2 flex-wrap</h4><p>决定容器内项目是否可换行。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="comment">/* nowrap: 不换行 */</span></span><br><span class="line">  <span class="comment">/* wrap: 换行，第一行在上方 */</span></span><br><span class="line">  <span class="comment">/* wrap-reverse: 换行，第一行在下方 */</span></span><br><span class="line">  <span class="comment">/* 默认值：nowrap */</span></span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-3-flex-flow"><a href="#3-3-flex-flow" class="headerlink" title="3.3 flex-flow"></a>3.3 flex-flow</h4><p>flex-direction 和 flex-wrap 的简写属性。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-4-flex"><a href="#3-4-flex" class="headerlink" title="3.4 flex"></a>3.4 flex</h4><p>项目的放大或缩小比例。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: none | [ &lt;<span class="string">&#x27;flex-grow&#x27;</span>&gt; &lt;<span class="string">&#x27;flex-shrink&#x27;</span>&gt;? || &lt;<span class="string">&#x27;flex-basis&#x27;</span>&gt; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-5-justify-content"><a href="#3-5-justify-content" class="headerlink" title="3.5 justify-content"></a>3.5 justify-content</h4><p>定义了项目在主轴上的对齐方式。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around | space-evenly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-6-align-items"><a href="#3-6-align-items" class="headerlink" title="3.6 align-items"></a>3.6 align-items</h4><p>定义了项目在交叉轴上的对齐方式。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-7-align-content"><a href="#3-7-align-content" class="headerlink" title="3.7 align-content"></a>3.7 align-content</h4><p>定义了在多根轴线的情况下的对齐方式。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-8-flex-1代表什么？"><a href="#3-8-flex-1代表什么？" class="headerlink" title="3.8 flex:1代表什么？"></a>3.8 flex:1代表什么？</h4><p>flex:1代表flex-grow:1,flex-shrink:1,flex-basis:0</p>
-<h3 id="4-项目属性详解"><a href="#4-项目属性详解" class="headerlink" title="4. 项目属性详解"></a>4. 项目属性详解</h3><h4 id="4-1-order"><a href="#4-1-order" class="headerlink" title="4.1 order"></a>4.1 order</h4><p>定义项目的排列顺序。数值越小，排列越靠前，默认为0</p>
-<h4 id="4-2-flex-grow"><a href="#4-2-flex-grow" class="headerlink" title="4.2 flex-grow"></a>4.2 flex-grow</h4><p>定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br>如果所有项目的flex-grow属性都为1，那么这些项目将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间的两倍。</p>
-<h4 id="4-3-flex-shrink"><a href="#4-3-flex-shrink" class="headerlink" title="4.3 flex-shrink"></a>4.3 flex-shrink</h4><p>定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。<br>如果所有项目的flex-shrink属性都为1，当空间不足时，所有项目将等分剩余空间。如果一个项目的flex-shrink属性为2，其他项目都为1，则前者占据的剩余空间的三倍。<br>负值对该属性无效。</p>
-<h4 id="4-4-flex-basis"><a href="#4-4-flex-basis" class="headerlink" title="4.4 flex-basis"></a>4.4 flex-basis</h4><p>定义了在分配多余空间之前，项目占据的主轴空间（main-size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
-<h4 id="4-5-flex"><a href="#4-5-flex" class="headerlink" title="4.5 flex"></a>4.5 flex</h4><p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。<br>该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。<br>建议优先使用这个属性，而不是单独使用flex-grow, flex-shrink 和 flex-basis属性。因为它们是flex-grow, flex-shrink 和 flex-basis的简写形式。</p>
-<h4 id="4-6-align-self"><a href="#4-6-align-self" class="headerlink" title="4.6 align-self"></a>4.6 align-self</h4><p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性的值，如果没有父元素，则等同于stretch。</p>
 
       </section>
 
@@ -209,28 +149,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2023/08/16/vue2%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">vue2项目中碰到的问题</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2023/04/23/axios%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%B0%81%E8%A3%85/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">axios在项目中的封装</h2>
+        <a href="/2024/07/27/%E7%AE%80%E5%8D%95%E5%B0%81%E8%A3%85%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95%EF%BC%88%E6%85%A2%E6%85%A2%E6%B7%BB%E5%8A%A0%EF%BC%89/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">简单封装的一些方法（慢慢添加）</h2>
         </a>
       
       <div class="card-text--row">Older</div>
